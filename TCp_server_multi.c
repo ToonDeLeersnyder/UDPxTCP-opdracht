@@ -1,4 +1,4 @@
-//gcc -Wall -pedantic TCp_server.c -l ws2_32 -o TCPserver
+//gcc -Wall -pedantic TCp_server_multi.c -l ws2_32 -o TCPserver_multi
 #ifdef _WIN32
 	#define _WIN32_WINNT _WIN32_WINNT_WIN7
 	#include <winsock2.h> //for all socket programming
@@ -121,7 +121,7 @@ int initialization()
 			else
 			{
 				
-				int listen_return = listen( internet_socket, 5 );
+				int listen_return = listen( internet_socket, 50 );
 				if( listen_return == -1 )
 				{
 					close( internet_socket );
@@ -225,7 +225,7 @@ void * execution( void * buffer_pointer )
 			char user[20];
 			strcpy(user, bufferName);
 			
-			for (int i = 0; i < 2; i++)
+			for (int i = 0; i < 50; i++)
 				{
 					if (!(clientSockT == socketCLientsConnected[i]))
 					{

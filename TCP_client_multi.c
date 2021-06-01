@@ -1,5 +1,5 @@
 //compile
-//gcc -Wall -pedantic TCP_client.c -l ws2_32 -lpthread -o TCP_client
+//gcc -Wall -pedantic TCP_client_multi.c -l ws2_32 -lpthread -o TCP_client_multi
 
 #ifdef _WIN32
 	#define _WIN32_WINNT _WIN32_WINNT_WIN7
@@ -147,7 +147,7 @@ void prefixUser()
 		if (recieve > 0) 
 		{
 			stringTrim(message, length);
-			prefix();
+			
 			printf("%s", message);
 			fprintf( stdout, "\n" );
 			
